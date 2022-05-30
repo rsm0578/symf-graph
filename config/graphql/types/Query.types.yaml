@@ -1,0 +1,22 @@
+Query:
+    type: object
+    config:
+        description: "Main query"
+        fields:
+            hotel:
+                type: "Hotel"
+                args:
+                    id:
+                        description: "Get Hotel by ID"
+                        type: "Int"
+                resolve: "@=resolver('Hotel', [args])"
+            hotels_collection:
+             type: "HotelCollection"
+             args:
+                limit:
+                   description: "Hotel limit"
+                   type: "Int!"
+                name:
+                    description: "Get hotel by name"
+                    type: "String!"
+             resolve: "@=resolver('HotelList', [args])"

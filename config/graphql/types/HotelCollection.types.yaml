@@ -1,0 +1,8 @@
+HotelCollection:
+    type: object
+    config:
+        description: "Hotel list"
+        fields:
+            hotels:
+                type: "[Hotel]"
+                description: "hotels"

@@ -1,0 +1,17 @@
+Hotel:
+    type: object
+    config:
+        description: "Hotel type"
+        fields:
+            id:
+                type: "Int"
+                description: "Hotel ID"
+            name:
+                type: "String"
+                description: "Hotel Name"
+            address:
+                type: "String"
+                description: "Hotel Address"
+            website:
+                type: "String"
+                description: "Hotel website"

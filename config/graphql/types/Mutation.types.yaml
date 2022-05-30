@@ -1,0 +1,10 @@
+Mutation:
+    type: object
+    config:
+        fields:
+            createHotel:
+                type: "Hotel"
+                resolve: "@=mutation('create_hotel', args)"
+                args:
+                    input:
+                        type: "HotelInput"
