@@ -1,0 +1,14 @@
+PagingInfoResponse:
+    type: object
+    config:
+        description: "Paging Info response type"
+        fields:
+            pageNumber:
+                type: "Int"
+                description: "pageNumber-1 ~ Offset"
+            pageSize:
+                type: "Int"
+                description: "Limit"
+            totalCount:
+                type: "Int"
+                description: "Total number of records"

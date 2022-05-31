@@ -1,0 +1,8 @@
+ValidationErrors:
+    type: enum
+    config:
+        description: "Hotel type"
+        values:
+            UNKNOWN_ERROR:
+                description: "Unknown error."
+                

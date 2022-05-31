@@ -15,3 +15,7 @@ Hotel:
             website:
                 type: "String"
                 description: "Hotel website"
+            errors:
+                #type: "[ValidationErrors!]!"
+                type: "String"
+                description: "Hotel errors"

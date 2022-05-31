@@ -1,7 +1,10 @@
-HotelInput:
+EditHotel:
     type: input-object
     config:
         fields:
+            id:
+                type: "Int"
+                description: "Hotel ID"
             name:
                 type: "String"
                 description: "Hotel name"

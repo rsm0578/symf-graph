@@ -6,3 +6,9 @@ HotelCollection:
             hotels:
                 type: "[Hotel]"
                 description: "hotels"
+            pagingInfoResponse:
+                type: "PagingInfoResponse"
+                description: "Get Paging Info"
+            errors:
+                type: "String"
+                description: "Hotel collection errors"

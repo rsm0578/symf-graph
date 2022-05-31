@@ -11,12 +11,21 @@ Query:
                         type: "Int"
                 resolve: "@=resolver('Hotel', [args])"
             hotels_collection:
-             type: "HotelCollection"
-             args:
-                limit:
-                   description: "Hotel limit"
-                   type: "Int!"
-                name:
-                    description: "Get hotel by name"
-                    type: "String!"
-             resolve: "@=resolver('HotelList', [args])"
+                type: "HotelCollection"
+                args:
+                    pagingInfo:
+                        description: "Get pagingInfo"
+                        type: "PagingInfo"
+                    name:
+                        description: "Get hotel by name"
+                        type: "String"
+                    address:
+                        description: "Get hotel by address"
+                        type: "String"
+                    website:
+                        description: "Get hotel by website"
+                        type: "String"
+                    sortInfo:
+                        description: "Get sort Info"
+                        type: "SortInfo"
+                resolve: "@=resolver('HotelList', [args])"

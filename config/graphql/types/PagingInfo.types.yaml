@@ -1,0 +1,10 @@
+PagingInfo:
+    type: input-object
+    config:
+        fields:
+            pageNumber:
+                type: "Int"
+                description: "pageNumber-1 ~ Offset"
+            pageSize:
+                type: "Int"
+                description: "Limit"

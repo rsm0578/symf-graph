@@ -1,0 +1,7 @@
+DeleteHotel:
+    type: input-object
+    config:
+        fields:
+            id:
+                type: "Int"
+                description: "Hotel ID"

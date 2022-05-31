@@ -7,4 +7,19 @@ Mutation:
                 resolve: "@=mutation('create_hotel', args)"
                 args:
                     input:
-                        type: "HotelInput"
+                        type: "AddHotel"
+                        description: "Add hotel"
+            updateHotel:
+                type: "Hotel"
+                resolve: "@=mutation('update_hotel', args)"
+                args:
+                    input:
+                        type: "EditHotel"
+                        description: "Edit hotel"
+            removeHotel:
+                type: "Hotel"
+                resolve: "@=mutation('remove_hotel', args)"
+                args:
+                    input:
+                        type: "DeleteHotel"
+                        description: "Delete hotel"

@@ -1,0 +1,14 @@
+AddHotel:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: "String"
+                description: "Hotel name"
+            address:
+                type: "String"
+                description: "Hotel address"
+            website:
+                type: "String"
+                description: "Hotel website"
+            

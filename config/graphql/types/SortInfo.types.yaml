@@ -1,0 +1,10 @@
+SortInfo:
+    type: input-object
+    config:
+        fields:
+            sortField:
+                type: "String"
+                description: "Sort field"
+            sortOrder:
+                type: "String"
+                description: "Sort order"
