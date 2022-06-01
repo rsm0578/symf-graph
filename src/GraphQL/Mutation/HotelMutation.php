@@ -39,7 +39,7 @@ class HotelMutation implements MutationInterface, AliasedInterface
                 $hotel->setName($input['name']);
                 $hotel->setAddress($input['address']);
                 $hotel->setWebsite($input['website']);
-                $this->em->getRepository('App:Hotel')->upsert($hotel);
+                $this->em->getRepository(Hotel::class)->upsert($hotel);
 
                 return $hotel;
             } catch (\Exception $err) {
@@ -70,7 +70,7 @@ class HotelMutation implements MutationInterface, AliasedInterface
                         'errors' => "Please enter valid hotel id to update.",
                     ];
                 }
-                $hotel = $this->em->getRepository('App:Hotel')->find($input['id']);
+                $hotel = $this->em->getRepository(Hotel::class)->find($input['id']);
                 if (empty($hotel)) {
                     return [
                         'errors' => "No hotel found for given hotel id.",
@@ -92,7 +92,7 @@ class HotelMutation implements MutationInterface, AliasedInterface
                     }
                     $hotel->setWebsite($input['website']);
                 }
-                $this->em->getRepository('App:Hotel')->upsert($hotel);
+                $this->em->getRepository(Hotel::class)->upsert($hotel);
             } catch (\Exception $err) {
                 throw new \Exception($err);
 
@@ -119,13 +119,13 @@ class HotelMutation implements MutationInterface, AliasedInterface
         $input = $args['input'];
         if (isset($input['id'])) {
             try {
-                $hotel = $this->em->getRepository('App:Hotel')->find($input['id']);
+                $hotel = $this->em->getRepository(Hotel::class)->find($input['id']);
                 if (empty($hotel)) {
                     return [
                         'errors' => "No hotel found for given hotel id.",
                     ];
                 }
-                $this->em->getRepository('App:Hotel')->remove($hotel);
+                $this->em->getRepository(Hotel::class)->remove($hotel);
 
                 return [
                     'message' => "Hotel removed successfully",
@@ -145,6 +145,13 @@ class HotelMutation implements MutationInterface, AliasedInterface
 
     }
 
+    /**
+     * Function to validate input
+     *
+     * @param      Argument  $input  The input
+     *
+     * @return     array   error array if any
+     */
     private function validateInput($input)
     {
         $validationErrors = [];

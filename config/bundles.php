@@ -8,4 +8,7 @@ return [
     Overblog\GraphQLBundle\OverblogGraphQLBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Overblog\GraphiQLBundle\OverblogGraphiQLBundle::class => ['dev' => true],
+    DAMA\DoctrineTestBundle\DAMADoctrineTestBundle::class => ['test' => true],
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
+    Liip\FunctionalTestBundle\LiipFunctionalTestBundle::class => ['all' => true],
 ];

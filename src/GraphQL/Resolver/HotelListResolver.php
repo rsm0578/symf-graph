@@ -5,6 +5,7 @@ use Doctrine\ORM\EntityManager;
 use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\QueryInterface;
+use App\Entity\Hotel;
 
 class HotelListResolver implements QueryInterface, AliasedInterface
 {
@@ -59,13 +60,13 @@ class HotelListResolver implements QueryInterface, AliasedInterface
             $orderBy[$argument['sortInfo']['sortField']] = (in_array(strtolower($sortOrder), ['asc', 'desc']) ? $sortOrder : 'asc');
         }
         
-        $hotels = $this->em->getRepository('App:Hotel')
+        $hotels = $this->em->getRepository(Hotel::class)
             ->findBy(
                 $criteria,
                 $orderBy, $limit, $offset);
         $pagingInfo = $argument['pagingInfo'];
 
-        $pagingInfo['totalCount'] = $this->em->getRepository('App:Hotel')->count([]);
+        $pagingInfo['totalCount'] = $this->em->getRepository(Hotel::class)->count([]);
 
         return ['hotels' => $hotels, 'pagingInfoResponse' => $pagingInfo];
     }

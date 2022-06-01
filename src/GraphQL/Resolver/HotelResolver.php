@@ -5,6 +5,7 @@ use Doctrine\ORM\EntityManager;
 use Overblog\GraphQLBundle\Definition\Argument;
 use Overblog\GraphQLBundle\Definition\Resolver\AliasedInterface;
 use Overblog\GraphQLBundle\Definition\Resolver\QueryInterface;
+use App\Entity\Hotel;
 
 class HotelResolver implements QueryInterface, AliasedInterface
 {
@@ -27,7 +28,8 @@ class HotelResolver implements QueryInterface, AliasedInterface
      */
     public function resolve(Argument $argument)
     {
-        $hotel = $this->em->getRepository('App:Hotel')->find($argument['id']);
+
+        $hotel = $this->em->getRepository(Hotel::class)->find($argument['id']);
 
         return $hotel;
     }
