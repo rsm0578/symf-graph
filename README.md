@@ -16,4 +16,4 @@
 - Go to postman, import Hotels.postman_collection.json file in the root folder
 - Test the queries and mutation there
 - unit test files are in tests folder in the root folder
-- bin/phpunit <relative path of file name>
+- ```bin/phpunit <relative path of file name>```
